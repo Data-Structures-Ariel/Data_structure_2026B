@@ -1,27 +1,33 @@
-package Week01;
+package Week02;
+
+import Week01.Node;
 
 import java.util.*;
 
-public class MyLinkedList<E> implements List<E> {
+public class MyDoublyLinkedList<E> implements List<E> {
 
     private Node<E> head;
+    private Node<E> tail;
     private int size;
 
-    public MyLinkedList() {
+    public MyDoublyLinkedList() {
         this.head = null;
         this.size = 0;
     }
 
+    //O(1)
     @Override
     public int size() {
         return size;
     }
 
+    //O(1)
     @Override
     public boolean isEmpty() {
         return head == null;
     }
 
+    //O(n)
     @Override
     public boolean contains(Object o) {
         //implements
@@ -43,27 +49,38 @@ public class MyLinkedList<E> implements List<E> {
         return null;
     }
 
-    //O(n)
+    //O(1)
     @Override
     public boolean add(E e) {
-        Node newNode = new Node(e);
-        if (isEmpty()) {
-            head = newNode;
-            return true;
+        Node<E> newNode = new Node<>(e);
+        if (head == null) {
+            head = tail = newNode;
+        } else {
+            newNode.setPrev(tail);
+            tail.setNext(newNode);
+            tail = tail.getNext();
         }
-        Node temp = head;
-        while (temp.hasNext())
-            temp = temp.getNext();
-
-        temp.setNext(newNode);
-
+        size++;
         return true;
     }
 
+    public void addFirst(E e) {
+        Node<E> newNode = new Node<>(e);
+        if (head == null) {
+            head = tail = newNode;
+        } else {
+            newNode.setNext(head);
+            head.setPrev(newNode);
+            head = newNode;
+        }
+        size++;
+
+    }
+
+    //O(n)
     @Override
     public boolean remove(Object o) {
         //implements
-
         return false;
     }
 
@@ -92,29 +109,33 @@ public class MyLinkedList<E> implements List<E> {
         return false;
     }
 
+    //O(1)
     @Override
     public void clear() {
         //implements
     }
 
+    //O(n)
     @Override
     public E get(int index) {
         //implements
         return null;
     }
 
+    //O(n)
     @Override
     public E set(int index, E element) {
         //implements
         return null;
     }
 
+    //O(n)
     @Override
     public void add(int index, E element) {
         //implements
     }
 
-
+    //O(n)
     @Override
     public E remove(int index) {
         //implements

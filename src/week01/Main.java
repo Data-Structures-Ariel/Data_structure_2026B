@@ -1,4 +1,4 @@
-package week01;
+package Week01;
 
 import java.util.LinkedList;
 
@@ -12,6 +12,8 @@ public class Main {
 
         add(chain, 4);
         chain = addFirst(chain, 4);
+
+
 
 
     }

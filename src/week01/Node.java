@@ -1,4 +1,4 @@
-package week01;
+package Week01;
 
 public class Node<E> {
 
