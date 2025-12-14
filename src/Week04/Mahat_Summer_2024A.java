@@ -48,6 +48,11 @@ public class Mahat_Summer_2024A {
                 case 3:
                     break;
                 case 4:
+                    Vehicle v1 = new Vehicle();
+                    Vehicle v2 = new Car();
+                    Vehicle v3 = new Truck();
+                    Car c = new Truck();
+
                     break;
                 case 5:
                     break;
@@ -71,6 +76,22 @@ public class Mahat_Summer_2024A {
                     return;
             }
         }
+    }
+
+    public static Motorcycle maxSpeed(Vehicle[] arr) {
+
+        double max = 0;
+        Motorcycle maxim = null;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] instanceof Motorcycle) {
+                if (max < arr[i].speed()) {
+                    maxim = (Motorcycle) arr[i];
+                    max = maxim.speed();
+                }
+            }
+        }
+
+        return (max == 0) ? null : maxim;
     }
 
     public static void func(Queue<Integer> qu, int x, int y) {
@@ -129,3 +150,59 @@ public class Mahat_Summer_2024A {
 
 
 }
+
+
+// Base class
+class Vehicle {
+
+    public double speed() {
+        return 0;
+    }
+
+    public void displayInfo() {
+        System.out.println("This is a vehicle.");
+    }
+}
+
+// Derived class Bus
+class Bus extends Vehicle {
+    @Override
+    public void displayInfo() {
+        System.out.println("This is a bus.");
+    }
+}
+
+// Derived class Motorcycle
+class Motorcycle extends Vehicle {
+    @Override
+    public void displayInfo() {
+        System.out.println("This is a motorcycle.");
+    }
+}
+
+// Derived class Car (which is further subclassed)
+class Car extends Vehicle {
+    @Override
+    public void displayInfo() {
+        System.out.println("This is a car.");
+    }
+}
+
+// Derived class Truck
+class Truck extends Car {
+    @Override
+    public void displayInfo() {
+        System.out.println("This is a truck.");
+    }
+}
+
+// Derived class RacingCar
+class RacingCar extends Car {
+    @Override
+    public void displayInfo() {
+        System.out.println("This is a racing car.");
+    }
+}
+
+
+
