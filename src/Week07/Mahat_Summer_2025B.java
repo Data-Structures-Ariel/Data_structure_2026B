@@ -1,5 +1,7 @@
 package Week07;
 
+import Week01.Node;
+
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -50,16 +52,23 @@ public class Mahat_Summer_2025B {
                     bool = isProperK(st, k);
                     System.out.println(k + " " + bool);
 
-                    k=3;
+                    k = 3;
                     bool = isProperK(st, k);
                     System.out.println(k + " " + bool);
                     System.out.println(st);
-                    fixIt(st,k);
+                    fixIt(st, k);
                     bool = isProperK(st, k);
                     System.out.println(k + " " + bool);
                     System.out.println(st);
                     break;
                 case 2:
+                    int number = 19283;
+                    Node<Integer> chain = buildChain(number);
+                    print(chain);
+                    chain = buildChainIter(number);
+                    print(chain);
+
+
                     break;
                 case 3:
                     break;
@@ -89,6 +98,42 @@ public class Mahat_Summer_2025B {
         }
     }
 
+    private static void print(Node<Integer> chain) {
+
+        while (chain != null) {
+            System.out.print(chain.getValue() + " -> ");
+            chain = chain.getNext();
+        }
+        System.out.println("null");
+    }
+
+    private static Node<Integer> buildChain(int number) {
+        if (number < 10) {
+            return new Node<>(number);
+        }
+
+        Node<Integer> head = buildChain(number / 10);
+        Node<Integer> current = head;
+
+
+        while (current.getNext() != null) {
+            current = current.getNext();
+        }
+
+        current.setNext(new Node<>(number % 10));
+        return head;
+    }
+
+
+    private static Node<Integer> buildChainIter(int number) {
+        Node<Integer> chain = new Node<>(number / 10);
+        number /= 10;
+        while (number != 0) {
+            chain = new Node<>(number / 10, chain, null);
+            number /= 10;
+        }
+        return chain;
+    }
 
     public static boolean isProperK(Stack<Integer> st, int k) {
         Stack<Integer> temp = new Stack<>();
@@ -153,5 +198,81 @@ public class Mahat_Summer_2025B {
 
     }
 
+
+}
+
+class StarCount {
+    private Node<Integer> number;
+
+    public void fixNumber() {
+
+        Node<Integer> newHead = null;
+        Node<Integer> newTail = null;
+
+        Node<Integer> current = number;
+
+        while (current != null) {
+            int value = current.getValue();
+
+            Node<Integer> digitChain = buildDigitChain(value);
+
+            if (newHead == null) {
+                newHead = digitChain;
+                newTail = getTail(digitChain);
+            } else {
+                newTail.setNext(digitChain);
+                newTail = getTail(digitChain);
+            }
+
+            current = current.getNext();
+        }
+
+        number = newHead;
+    }
+    private Node<Integer> buildDigitChain(int number) {
+
+        Node<Integer> head = null;
+
+        while (number > 0) {
+            int digit = number % 10;
+            number /= 10;
+
+            Node<Integer> newNode = new Node<>(digit);
+            newNode.setNext(head);
+            head = newNode;
+        }
+
+        return head;
+    }
+    private Node<Integer> getTail(Node<Integer> head) {
+        Node<Integer> current = head;
+        while (current.getNext() != null) {
+            current = current.getNext();
+        }
+        return current;
+    }
+    public void addOne() {
+        int carry = addOneRec(number);
+
+        if (carry == 1) {
+            number = new Node<Integer>(1, number,null);
+        }
+    }
+
+    private int addOneRec(Node<Integer> node) {
+
+
+        if (node.getNext() == null) {
+            int sum = node.getValue() + 1;
+            node.setValue(sum % 10);
+            return sum / 10;
+        }
+
+        int carry = addOneRec(node.getNext());
+        int sum = node.getValue() + carry;
+
+        node.setValue(sum % 10);
+        return sum / 10;
+    }
 
 }
