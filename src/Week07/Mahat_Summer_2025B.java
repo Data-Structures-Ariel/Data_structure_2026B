@@ -1,9 +1,9 @@
 package Week07;
 
-import Week01.Node;
-
 import java.util.Scanner;
 import java.util.Stack;
+
+import Week01.*;
 
 public class Mahat_Summer_2025B {
 
@@ -20,6 +20,7 @@ public class Mahat_Summer_2025B {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         while (true) {
             System.out.println("Enter q number");
             int num = in.nextInt();
@@ -62,13 +63,6 @@ public class Mahat_Summer_2025B {
                     System.out.println(st);
                     break;
                 case 2:
-                    int number = 19283;
-                    Node<Integer> chain = buildChain(number);
-                    print(chain);
-                    chain = buildChainIter(number);
-                    print(chain);
-
-
                     break;
                 case 3:
                     break;
@@ -98,41 +92,42 @@ public class Mahat_Summer_2025B {
         }
     }
 
-    private static void print(Node<Integer> chain) {
 
-        while (chain != null) {
-            System.out.print(chain.getValue() + " -> ");
-            chain = chain.getNext();
+    public static boolean goodNum(int num, int k) {
+        while (num >= 10) {
+            num /= 10;
         }
-        System.out.println("null");
+        return num == k;
     }
 
-    private static Node<Integer> buildChain(int number) {
-        if (number < 10) {
-            return new Node<>(number);
+    public static boolean isProperK_Hila(Stack<Integer> st, int k) {
+        if (st == null || st.isEmpty())
+            return false;
+
+        Stack<Integer> temp = new Stack<>();
+
+        boolean findDif = false;
+        boolean findOne = false;
+        boolean findOther = false;
+
+        while (!st.isEmpty()) {
+            int num = st.pop();
+            temp.push(num);
+            if (goodNum(num, k)) {
+                if (findDif) {
+                    findOther = true;
+                    break;
+                } else
+                    findOne = true;
+            } else if (findOne) {
+                findDif = true;
+            }
         }
-
-        Node<Integer> head = buildChain(number / 10);
-        Node<Integer> current = head;
-
-
-        while (current.getNext() != null) {
-            current = current.getNext();
+        while (!temp.isEmpty()) {
+            int num = temp.pop();
+            st.push(num);
         }
-
-        current.setNext(new Node<>(number % 10));
-        return head;
-    }
-
-
-    private static Node<Integer> buildChainIter(int number) {
-        Node<Integer> chain = new Node<>(number / 10);
-        number /= 10;
-        while (number != 0) {
-            chain = new Node<>(number / 10, chain, null);
-            number /= 10;
-        }
-        return chain;
+        return !findOther && findOne;
     }
 
     public static boolean isProperK(Stack<Integer> st, int k) {
@@ -155,12 +150,12 @@ public class Mahat_Summer_2025B {
                     foundK = true;
             else if (foundK)
                 endedKBlock = true;
-
         }
 
         restore(st, temp);
         return foundK;
     }
+
 
     private static void restore(Stack<Integer> st, Stack<Integer> temp) {
         while (!temp.isEmpty()) {
@@ -202,77 +197,119 @@ public class Mahat_Summer_2025B {
 }
 
 class StarCount {
-    private Node<Integer> number;
+    Node<Integer> number;
 
-    public void fixNumber() {
 
-        Node<Integer> newHead = null;
-        Node<Integer> newTail = null;
+    public void fixNumberY() {
+        if (number == null)
+            return;
+        // 6➔471➔5➔23
+        // 1➔5➔23
+        // 6➔471➔1➔5➔23
+        // 6➔47➔1➔5➔23
 
+        // 7➔1➔5➔23
+        // 6➔4➔7➔1➔5➔23
         Node<Integer> current = number;
-
         while (current != null) {
-            int value = current.getValue();
-
-            Node<Integer> digitChain = buildDigitChain(value);
-
-            if (newHead == null) {
-                newHead = digitChain;
-                newTail = getTail(digitChain);
-            } else {
-                newTail.setNext(digitChain);
-                newTail = getTail(digitChain);
+            int curVal = current.getValue();
+            while (curVal / 10 > 0) {
+                Node<Integer> temp = new Node<>(curVal % 10);
+                temp.setNext(current.getNext());
+                current.setNext(temp);
+                current.setValue(curVal / 10);
+                curVal /= 10;
             }
-
             current = current.getNext();
         }
 
-        number = newHead;
     }
-    private Node<Integer> buildDigitChain(int number) {
 
-        Node<Integer> head = null;
+    // 6➔471➔5➔23
+    // 6➔4->7->1➔null
+    // 6➔4➔7➔1➔5➔23null
+    // prev =
+    public void fixNumber() {
+        if (number == null)
+            return;
+        Node<Integer> current = number;
+        Node<Integer> prev = null;
+        while (current != null) {
+            int item = current.getValue();
+            if (item > 9) {
+                Node[] newArr = buildNumber(item);
+                if (prev != null)
+                    prev.setNext(newArr[0]);
 
-        while (number > 0) {
-            int digit = number % 10;
-            number /= 10;
-
-            Node<Integer> newNode = new Node<>(digit);
-            newNode.setNext(head);
-            head = newNode;
-        }
-
-        return head;
-    }
-    private Node<Integer> getTail(Node<Integer> head) {
-        Node<Integer> current = head;
-        while (current.getNext() != null) {
+                newArr[1].setNext(current.getNext());
+                current = newArr[1];
+            }
+            prev = current;
             current = current.getNext();
         }
-        return current;
+
     }
+
+    //12345
+    private Node[] buildNumber(int n) {
+        Node<Integer> newNode = new Node<>(n % 10);
+        Node<Integer> tail = newNode;
+
+        // newNode - > 5
+
+        // node -> 5
+        // newNode -> 4 -> 5
+
+        // node -> 4 -> 5
+        // newNode -> 3 -> 4 -> 5
+
+        // node -> 3 -> 4 -> 5
+        // newNode 2 -> 3 -> 4 -> 5
+
+        // node - > 2 -> 3 -> 4 -> 5
+        // newNode - > 1 -> 2 -> 3 -> 4 -> 5
+        while ((n /= 10) != 0) {
+            Node<Integer> node = newNode;
+            newNode = new Node<>(n % 10);
+            newNode.setNext(node);
+        }
+
+        return new Node[]{newNode, tail};
+
+    }
+
+    //O(n)
     public void addOne() {
-        int carry = addOneRec(number);
-
-        if (carry == 1) {
-            number = new Node<Integer>(1, number,null);
-        }
-    }
-
-    private int addOneRec(Node<Integer> node) {
-
-
-        if (node.getNext() == null) {
-            int sum = node.getValue() + 1;
-            node.setValue(sum % 10);
-            return sum / 10;
+        if (number == null)
+            number = new Node<>(1);
+        else {
+            int c = addOneRec(number);
+            if (c == 1) ;
+            number = new Node<>(1, number,null);
         }
 
-        int carry = addOneRec(node.getNext());
-        int sum = node.getValue() + carry;
 
-        node.setValue(sum % 10);
-        return sum / 10;
+    }
+    private int updateChain(Node<Integer> chain, int item, int c) {
+        item += c;
+        if (item > 9) {
+            chain.setValue(0);
+            return 1;
+        } else {
+            chain.setValue(item);
+            return 0;
+        }
+
     }
 
+    private int addOneRec(Node<Integer> chain) {
+        if (chain.getNext() == null) {
+            int item = chain.getValue();
+            return updateChain(chain, item, 1);
+        } else {
+            int c = addOneRec(chain.getNext());
+            int item = chain.getValue();
+            return updateChain(chain, item, c);
+        }
+    }
 }
