@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fc89de38-1047-4fb0-8e88-6571bf75e575" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Week09/Mahat_Aviv_2020A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bsharabi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Data-Structures-Ariel/Data_structure_2026B.git&quot;,
+    &quot;accountId&quot;: &quot;5c0a7ca0-5431-4dcf-8d5c-ece463b2e295&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="34sZLj4ylrCW5NCl7hRRt0Ix2xU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ExamTrace.executor": "Run",
+    "Application.GraderRunner.executor": "Run",
+    "Application.Mahat_Aviv_2020A.executor": "Run",
+    "Application.Mahat_Summer_2025B.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Moed_2025A.executor": "Run",
+    "Application.Moed_2025B.executor": "Run",
+    "Application.SectionA.executor": "Run",
+    "Application.Task.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.QuizTest.executor": "Run",
+    "JUnit.QuizTest.testIsValidBST.executor": "Run",
+    "JUnit.QuizTest.testMaxSubarraySumCircular.executor": "Run",
+    "JUnit.QuizTest.testRemoveZeroSumSublists.executor": "Run",
+    "JUnit.QuizTest.testSimplifyPath.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ZAsus/OneDrive/Documents/IdeaProjects/Data_structure_2026B/src/Tests",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ZAsus\OneDrive\Documents\IdeaProjects\Data_structure_2026B\src\Tests" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ZAsus\OneDrive\Documents\IdeaProjects\Data_structure_2026B\src\Quiz" />
+      <recent name="C:\Users\ZAsus\OneDrive\Documents\IdeaProjects\Data_structure_2026B\src\Quiz\students" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Week09" />
+      <recent name="Week08" />
+      <recent name="Quiz.students" />
+      <recent name="Week07" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Mahat_Aviv_2020A">
+    <configuration name="ExamTrace" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tests.A.ExamTrace" />
+      <module name="Data_structure_2026B" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.A.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mahat_Aviv_2020A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Week09.Mahat_Aviv_2020A" />
+      <module name="Data_structure_2026B" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Week09.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Moed_2025A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tests.A.Moed_2025A" />
+      <module name="Data_structure_2026B" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.A.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Moed_2025B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tests.B.Moed_2025B" />
+      <module name="Data_structure_2026B" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.B.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Week08.Task" />
+      <module name="Data_structure_2026B" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Week08.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Mahat_Aviv_2020A" />
+        <item itemvalue="Application.Moed_2025B" />
+        <item itemvalue="Application.Task" />
+        <item itemvalue="Application.Moed_2025A" />
+        <item itemvalue="Application.ExamTrace" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc89de38-1047-4fb0-8e88-6571bf75e575" name="Changes" comment="" />
+      <created>1762004188082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762004188082</updated>
+      <workItem from="1762004189296" duration="360000" />
+      <workItem from="1764501740835" duration="1471000" />
+      <workItem from="1765701390597" duration="6063000" />
+      <workItem from="1766951329817" duration="7587000" />
+      <workItem from="1767005239031" duration="502000" />
+      <workItem from="1767394803840" duration="495000" />
+      <workItem from="1767529402576" duration="1204000" />
+      <workItem from="1767533332704" duration="300000" />
+      <workItem from="1767550733220" duration="1648000" />
+      <workItem from="1767616908964" duration="2783000" />
+      <workItem from="1767652174168" duration="655000" />
+      <workItem from="1767739118467" duration="6908000" />
+      <workItem from="1768152987326" duration="1116000" />
+      <workItem from="1768164359480" duration="7515000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Quiz/students/QuizTest.java</url>
+          <line>115</line>
+          <properties class="Quiz.students.QuizTest" method="testIsValidBST">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Tests/B/Moed_2025B.java</url>
+          <line>399</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
